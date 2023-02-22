@@ -1,5 +1,4 @@
 pandas
-IPython.display
 re
 locale
 datetime
