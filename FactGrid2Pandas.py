@@ -3,7 +3,8 @@ from IPython.display import display
 from pandas import json_normalize
 import re
 import locale, datetime
-locale.setlocale(locale.LC_TIME, locale.normalize("de"))
+#locale.setlocale(locale.LC_TIME, locale.normalize("de"))
+locale.setlocale(locale.LC_ALL, "de_DE")
 
 import streamlit as st
 st.set_page_config(layout="wide")
