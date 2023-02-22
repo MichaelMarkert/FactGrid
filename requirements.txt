@@ -1,7 +1,5 @@
 pandas
-re
 locale
 datetime
-streamlit
 st_keyup
 itables
