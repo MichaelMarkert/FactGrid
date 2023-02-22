@@ -1,3 +1,4 @@
 pandas
 streamlit_keyup
 itables
+sparqlwrapper
