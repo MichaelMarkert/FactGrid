@@ -1,5 +1,3 @@
 pandas
-locale
-datetime
 st_keyup
 itables
