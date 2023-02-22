@@ -1,0 +1,8 @@
+pandas
+IPython.display
+re
+locale
+datetime
+streamlit
+st_keyup
+itables
