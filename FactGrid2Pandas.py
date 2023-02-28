@@ -73,7 +73,7 @@ with col1:
             query_string_element_umlaut = query_string_element.replace("ä","ae").replace("Ä","Äe").replace("ö","oe").replace("Ö","Oe").replace("ü","ue").replace("Ü","Ue").replace("ß","ss")
             query_string_element = query_string_element + "|" + query_string_element_umlaut
         query_string_list += "(" + str(query_string_element) + ")"     
-st.text(query_string_list)
+#st.text(query_string_list)
 
 #TIMESLIDER
 earliest = int(df['von'].min())
@@ -106,42 +106,6 @@ with col3:
 
 df = df[df['concatenate'].str.contains(query_string_list, regex=True)]
 df = df.drop('concatenate', axis=1)
-
-#AGGRID
-#from st_aggrid import AgGrid
-#from st_aggrid import JsCode
-#from st_aggrid.grid_options_builder import GridOptionsBuilder
-
-#builder = GridOptionsBuilder.from_dataframe(df)
-#builder.configure_side_bar()
-#builder.configure_default_column(groupable=True, value=True, enableRowGroup=True, aggFunc="sum")
-#builder.configure_pagination(paginationPageSize=10)
-#builder.configure_columns("Titel", wrapText=True, autoHeight=True, width=300)
-#builder.configure_columns("Inhalt", wrapText=True, autoHeight=True, width=300)
-#builder.configure_columns("Signatur", width=100)
-#builder.configure_columns("von", width=150)
-#builder.configure_columns("bis", width=150)
-#builder.configure_column("FactGrid_ID",
-#                    headerName="FactGrid_ID", wrapText=True, autoHeight=True,
-#                    cellRenderer=JsCode(
-#                        """
-#                        function(params) {
-#                            return '<a href=' + params.value + ' target="_blank">' + params.value + '</a>'
-#                            }
-#                        """))
-#builder.configure_column("concatenate", hide=True)
-#go = builder.build()
-
-#custom_css = {
-#    ".ag-cell-wrap-text": {
-#        "word-break": "normal"
-#        },
-#    ".ag-row-hover": {
-#        "background-color": "lightblue"
-#        }
-#    }
-
-#AgGrid(df, gridOptions=go, fit_columns_on_grid_load=True, allow_unsafe_jscode=True, custom_css=custom_css, enable_enterprise_modules=True)
 
 #ITABLE
 html=DT(df, 
